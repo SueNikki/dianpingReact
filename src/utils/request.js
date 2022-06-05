@@ -6,12 +6,12 @@ const headers = new Headers({
 function get(url) {
   return fetch(url, {
     method: "GET",
-    headers
+    headers: headers
   }).then(response => {
-    handleResponse(url,response);
-  }).catch(err => {
-    console.error(`Request failed. Url = ${url}`);
-    return Promise.reject({error: {message: "Requset failed"}})
+    return handleResponse(url, response);
+  }).catch(error => {
+    console.error(`Request failed. Url = ${url}. Message = ${error}`)
+    return Promise.reject({error: {message: "Request failed."}})
   })
 }
 

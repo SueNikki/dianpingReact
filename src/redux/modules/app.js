@@ -8,7 +8,7 @@ export const types = {
 
 //action creators
 export const actions = {
-  clearerror: () => ({
+  clearError: () => ({
     type: types.CLEAR_ERROR
   })
 }
