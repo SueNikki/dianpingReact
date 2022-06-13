@@ -12,7 +12,7 @@ export default class Discount extends Component {
           <span className="discount__arrow" />
         </a>
         <div className="discount__content">
-          {/* {data.map((item) => {
+          {data.map((item) => {
             return (
               <a key={item.id} className="discount__item">
                 <div className="discount__itemPic">
@@ -27,7 +27,7 @@ export default class Discount extends Component {
                 </div>
               </a>
             );
-          })} */}
+          })}
         </div>
       </div>
     );

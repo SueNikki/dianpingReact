@@ -15,7 +15,7 @@ class Home extends Component {
 
   componentDidMount() {
     this.props.homeActions.loadDiscounts();
-    console.log(this.props.likes,'likes');
+    console.log(this.props,'props');
   }
 
   fetchMoreLikes = () => {
@@ -41,10 +41,10 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state, props) => {
-  console.log(state,'mapDispatchToProps')
+  console.log(state);
   return {
     likes: getLikes(state),
-    discount: getDiscounts(state),
+    discounts: getDiscounts(state),
     pageCount: getPageCountOfLikes(state)
   }
 }

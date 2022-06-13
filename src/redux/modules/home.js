@@ -16,9 +16,9 @@ export const types = {
   FETCH_LIKES_SUCCESS: "HOME/FETCH_LIKES_SUCCESS",
   FETCH_LIKES_FAILURE: "HOME/FETCH_LIKES_FAILURE",
   // 获取超值特惠请求
-  FETCH_DISCOUNTS_REQUEST: "HOME/FETCH_LIKES_REQUEST",
-  FETCH_DISCOUNTS_SUCCESS: "HOME/FETCH_LIKES_SUCCESS",
-  FETCH_DISCOUNTS_FAILURE: "HOME/FETCH_LIKES_FAILURE",
+  FETCH_DISCOUNTS_REQUEST: "HOME/FETCH_DISCOUNTS_REQUEST",
+  FETCH_DISCOUNTS_SUCCESS: "HOME/FETCH_DISCOUNTS_SUCCESS",
+  FETCH_DISCOUNTS_FAILURE: "HOME/FETCH_DISCOUNTS_FAILURE",
 }
 
 const initialState = {
@@ -77,7 +77,6 @@ const fetchDiscounts = (endpoint, params) => ({
 })
 // 猜你喜欢的reducer
 const likes = (state = initialState.likes, actions) => {
-  console.log(actions,999);
   switch(actions.type) {
     case types.FETCH_LIKES_REQUEST: 
       return {...state, isFetching: true};
@@ -120,9 +119,7 @@ export default reducer;
 // selections
 // 获取猜你喜欢state
 export const getLikes = state => {
-  // console.log(state.home.likes, 'state.home.likes');
   return state.home.likes.ids.map(id => {
-    console.log(state.entities,'state.entities.products[id]');
     return state.entities.products[id]
   })
 }

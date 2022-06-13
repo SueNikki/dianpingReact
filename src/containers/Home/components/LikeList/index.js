@@ -11,11 +11,10 @@ export default class LikeList extends Component {
   componentDidMount() {
     document.addEventListener("scroll", this.handleScroll);
     this.props.fetchData();
-    console.log(this.props.data);
   }
 
   componentDidUpdate() {
-    if(this.props.paegCount >= 3 && !this.removeListener) {
+    if(this.props.pageCount >= 3 && !this.removeListener) {
       document.removeEventListener("scroll", this.handleScroll);
       this.removeListener = true;
     }
@@ -39,7 +38,7 @@ export default class LikeList extends Component {
   }
 
   render() {
-    const {data, paegCount} = this.props;
+    const {data, pageCount} = this.props;
 
     return (
       <div ref={this.myRef} className="likeList">
@@ -52,7 +51,7 @@ export default class LikeList extends Component {
           }
         </div>
         {
-          paegCount < 3 ?  (<Loading/>) : (
+          pageCount < 3 ?  (<Loading/>) : (
             <a className='likeList__viewAll'>
               查看更多
             </a>

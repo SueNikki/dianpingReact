@@ -3,19 +3,18 @@ import './style.css'
 
 export default class LikeItem extends Component {
   render() {
-    // const {
-    //   shop,
-    //   tag,
-    //   picture,
-    //   product,
-    //   currentPrice,
-    //   oldPrice,
-    //   saleDesc
-    // } = this.props.data;
+    const {
+      shop,
+      tag,
+      picture,
+      product,
+      currentPrice,
+      oldPrice,
+      saleDesc
+    } = this.props.data;
     return (
       <a className="likeItem">
-        {this.props.data}
-        {/* <div className="likeItem__picContainer">
+        <div className="likeItem__picContainer">
           <div className="likeItem__picTag">{tag}</div>
           <img className="likeItem__pic" src={picture} alt="img" />
         </div>
@@ -29,7 +28,7 @@ export default class LikeItem extends Component {
             </div>
             <div className="likeItem__sale">{saleDesc}</div>
           </div>
-        </div> */}
+        </div>
       </a>
     );
   }
