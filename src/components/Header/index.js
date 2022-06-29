@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import {Link} from "react-router-dom";
+import "./style.css"
 
-export default class HomeHeader extends Component {
+class Header extends Component {
   render() {
+    const { grey, title, onBack } = this.props;
+    const backgroundColor = grey ?'#f0f0f0': '#fff';
     return (
-      <div className='homeHeader'>
-         <header className='homeHeader__wrapper'>
-            <a className='homeHeader__city'>北京</a>
-            <Link to="/search" className='homeHeader__search'>输入商户名、地点</Link>
-            <Link to="/user" className='homeHeader__self'>
-              <div className='homeHeader__portrait'/>
-            </Link>
-         </header>
-      </div>
-    )
+      <header className="header" style={{'backgroundColor':backgroundColor }}>
+        <div className="header__back" onClick={onBack}>
+          返回
+        </div>
+        <div className="header__title">{title}</div>
+      </header>
+    );
   }
 }
+
+export default Header;
